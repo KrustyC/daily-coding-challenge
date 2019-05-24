@@ -5,6 +5,9 @@
   "repository": "git@github.com:KrustyC/daily-coding-challenge.git",
   "author": "Davide Crestini <davide.crestini94@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
