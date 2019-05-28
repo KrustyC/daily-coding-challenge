@@ -1,4 +1,4 @@
-## Day 3 (Medium)
+## Day 4 (Hard)
 
 Good morning! Here's your coding interview problem for today.
 

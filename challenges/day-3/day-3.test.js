@@ -48,7 +48,7 @@ describe('day-3 test 2', () => {
     expect(parseInt(serializedDeserialized.right().val(), 10)).toBe(3);
   });
 
-  test.only('idempotence', () => {
+  test('idempotence', () => {
     const idempotentSerialization = serialize(deserialize(serialize(node)));
     expect(idempotentSerialization).toBe(serialize(node));
   });
