@@ -1,7 +1,10 @@
 import { car, cdr } from './day-5';
 
 const cons = (a, b) => {
-  return f => f(a, b);
+  const pair = f => {
+    return f(a, b);
+  };
+  return pair;
 };
 
 describe('day-5 test', () => {
