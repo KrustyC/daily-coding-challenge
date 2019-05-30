@@ -8,6 +8,8 @@ const couples = [
   ['1215647', 21],
 ];
 
-test.each(couples)('.numWays %s', (string, expected) => {
-  expect(numWays(string)).toEqual(expected);
+describe('day-7', () => {
+  test.each(couples)('.numWays %s', (string, expected) => {
+    expect(numWays(string)).toEqual(expected);
+  });
 });

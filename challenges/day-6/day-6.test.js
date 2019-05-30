@@ -8,6 +8,8 @@ const couples = [
   [[1, 8, 2, 4, 3, -1, -5, -3], 5],
 ];
 
-test.each(couples)('.findFirstMissingpositive', (array, expected) => {
-  expect(findFirstMissingpositive(array)).toEqual(expected);
+describe('day-6', () => {
+  test.each(couples)('.findFirstMissingpositive', (array, expected) => {
+    expect(findFirstMissingpositive(array)).toEqual(expected);
+  });
 });

@@ -8,6 +8,8 @@ const couples = [
   [[10, 15, 3, 7, 3, 8, 42, 6], 50, true],
 ];
 
-test.each(couples)('.findKSum(%i, %i)', (array, k, expected) => {
-  expect(findKSum(array, k)).toBe(expected);
+describe('day-1', () => {
+  test.each(couples)('.findKSum(%i, %i)', (array, k, expected) => {
+    expect(findKSum(array, k)).toBe(expected);
+  });
 });

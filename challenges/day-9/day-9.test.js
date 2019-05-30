@@ -1,4 +1,4 @@
-import numWays from './day-7';
+import maxSumDistantNumbers from './day-9';
 
 const couples = [
   ['111', 3],
@@ -8,6 +8,6 @@ const couples = [
   ['1215647', 21],
 ];
 
-test.each(couples)('.numWays %s', (string, expected) => {
-  expect(numWays(string)).toEqual(expected);
+test.each(couples)('.maxSumDistantNumbers', (array, expected) => {
+  expect(maxSumDistantNumbers(array)).toEqual(expected);
 });

@@ -5,6 +5,8 @@ const couples = [
   [[3, 2, 1], [2, 3, 6]],
 ];
 
-test.each(couples)('.productOfOtherNumbers(%i, %i)', (array, expected) => {
-  expect(productOfOtherNumbers(array)).toEqual(expected);
+describe('day-2', () => {
+  test.each(couples)('.productOfOtherNumbers(%i, %i)', (array, expected) => {
+    expect(productOfOtherNumbers(array)).toEqual(expected);
+  });
 });
