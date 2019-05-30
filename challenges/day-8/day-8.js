@@ -1,28 +1,30 @@
-const univalHelper = (root, value) => {
+const helper = root => {
   if (root === null) {
-    return true;
+    return [0, true];
   }
 
-  if (root.val() === value) {
-    return (
-      univalHelper(root.left(), value) && univalHelper(root.right(), value)
-    );
+  const [leftCount, isLeftUnival] = helper(root.left());
+  const [rightCount, isRightUnival] = helper(root.right());
+  const totalCount = leftCount + rightCount;
+
+  if (isLeftUnival && isRightUnival) {
+    if (root.left() !== null && root.val() !== root.left().val()) {
+      return [totalCount, false];
+    }
+
+    if (root.right() !== null && root.val() !== root.right().val()) {
+      return [totalCount, false];
+    }
+
+    return [totalCount + 1, true];
   }
 
-  return false;
+  return [totalCount, false];
 };
 
-const isUnival = root => univalHelper(root, root.val());
-
-const countUniVal = node => {
-  if (node === null) {
-    return 0;
-  }
-
-  const left = countUniVal(node.left());
-  const right = countUniVal(node.right());
-
-  return isUnival(node) ? 1 + left + right : left + right;
+const countUniVal = root => {
+  const [count] = helper(root);
+  return count;
 };
 
 export default countUniVal;
