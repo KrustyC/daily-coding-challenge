@@ -1,33 +1,20 @@
-const arrayMax = array => {
-  let max = -Infinity;
+const maxSum = array => {
+  let [prevOne, prevTwo, res] = [0, 0, 0];
 
-  array.forEach(x => {
-    if (x > max) {
-      max = x;
+  array.forEach((num, i) => {
+    if (i === 0) {
+      res = num;
+    } else if (i === 1) {
+      res = Math.max(array[0], num);
+    } else {
+      res = Math.max(prevTwo + num, prevOne);
     }
+
+    prevTwo = prevOne;
+    prevOne = res;
   });
 
-  return max;
+  return res;
 };
 
-const largestSumOfNonAdjacent = array => {
-  const { length } = array;
-
-  switch (length) {
-    case 0:
-      return 0;
-    case 1:
-      return array[1];
-    case 2:
-      return array[0] > array[1] ? array[0] : array[1];
-    default:
-      for (let i = length - 3; i >= 0; i--) {
-        const maxOfNonAdjacent = arrayMax(array.slice(i + 2));
-        array[i] = maxOfNonAdjacent + array[i];
-      }
-
-      return array[0] > array[1] ? array[0] : array[1];
-  }
-};
-
-export default largestSumOfNonAdjacent;
+export default maxSum;
