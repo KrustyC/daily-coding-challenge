@@ -7,6 +7,8 @@ const couples = [
   [[1, 0, 3, 9, 2], 10],
 ];
 
-test.each(couples)('largestSumOfNonAdjacent', (array, expected) => {
-  expect(largestSumOfNonAdjacent(array)).toEqual(expected);
+describe('day-9', () => {
+  test.each(couples)('largestSumOfNonAdjacent', (array, expected) => {
+    expect(largestSumOfNonAdjacent(array)).toEqual(expected);
+  });
 });
